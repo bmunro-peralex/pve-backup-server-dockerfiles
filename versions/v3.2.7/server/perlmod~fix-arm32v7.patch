@@ -1,8 +1,8 @@
 diff --git a/perlmod-bin/debian/rules b/perlmod-bin/debian/rules
-index 955dd78..193c08c 100755
+index 955dd78..8b6f6ed 100755
 --- a/perlmod-bin/debian/rules
 +++ b/perlmod-bin/debian/rules
-@@ -9,5 +9,20 @@
+@@ -9,5 +9,17 @@
  # Uncomment this to turn on verbose mode.
  #export DH_VERBOSE=1
  
@@ -18,8 +18,5 @@ index 955dd78..193c08c 100755
 +
 +override_dh_auto_install:
 +	dh_auto_install
-+	ifeq ($(ARCH), armhf)
-+		# Manually update the shebang line for arm32v7
-+		sed -i 's|^#!.*/usr/bin/perl|#!/usr/bin/dh_perl|' debian/perlmod-bin/usr/lib/perlmod/genpackage.pl
-+	endif
++	sed -i 's|^#!.*/usr/bin/perl|#!/usr/bin/dh_perl|' debian/perlmod-bin/usr/lib/perlmod/genpackage.pl
 +endif
