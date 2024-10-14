@@ -1,0 +1,11 @@
+diff --git a/perlmod-bin/debian/rules b/perlmod-bin/debian/rules
+index 955dd78..1fa242e 100755
+--- a/perlmod-bin/debian/rules
++++ b/perlmod-bin/debian/rules
+@@ -11,3 +11,6 @@
+ 
+ %:
+ 	dh $@
++
++override_dh_perl:
++	dh_perl -p perlmod-bin
